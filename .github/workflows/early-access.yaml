@@ -19,7 +19,7 @@ name: Early Access
 
 # trigger on push to branches and PR
 on:
-  push:
+  push: master
     branch:
   pull_request:
 
