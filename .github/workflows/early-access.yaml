@@ -61,13 +61,13 @@ jobs:
         run: ./mvnw clean verify -Pnative -Dmrm=false -B -ntp -e
 
       - name: 'Upload daemon test logs'
-        if: always()
         uses: actions/upload-artifact@v2
         with:
           name: daemon-test-logs-${{ env.OS }}
           path: integration-tests/target/mvnd-tests/**/daemon*.log
 
       - name: 'Upload artifact'
+        if: always()
         uses: actions/upload-artifact@v2
         with:
           name: mvnd-${{ env.OS }}
